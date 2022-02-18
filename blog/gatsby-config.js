@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: '.env.${process.env.NODE_ENV}'
+  path: `.env.${process.env.NODE_ENV}`
 });
 
 module.exports = {
@@ -31,6 +31,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    'gatsby-transformer-remark',
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
