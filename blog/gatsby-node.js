@@ -11,18 +11,6 @@ exports.createPages = ({ graphql, actions }) => {
               id
               title
               slug
-              body {
-                childMarkdownRemark {
-                  excerpt
-                }
-              }
-              heroImage {
-                gatsbyImageData(
-                  layout: CONSTRAINED,
-                  placeholder: BLURRED,
-                  width: 300
-                )
-              }
             }
           }
         }
