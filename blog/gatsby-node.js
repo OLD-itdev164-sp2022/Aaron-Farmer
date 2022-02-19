@@ -9,7 +9,20 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               id
+              title
               slug
+              body {
+                childMarkdownRemark {
+                  excerpt
+                }
+              }
+              heroImage {
+                gatsbyImageData(
+                  layout: CONSTRAINED,
+                  placeholder: BLURRED,
+                  width: 300
+                )
+              }
             }
           }
         }
