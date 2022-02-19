@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Aaron's Starter`,
@@ -12,13 +16,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `ah1as0nuzy5a`,
-        accessToken: `2E-DXC-2kdnP5BKkY7lCYNncdlcG2qiXj3IpFmxG_3c`
-      }
-    },
+    'gatsby-transformer-remark',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,8 +26,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `${process.env.SPACE_ID}`,
+        accessToken: `${process.env.ACCESS_TOKEN}`
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
