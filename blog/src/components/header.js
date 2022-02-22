@@ -1,13 +1,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { Styled } from "styled-components"
+import styled from "styled-components"
 
 const Outer = styled.header`
-  background: rebeccapurple;
+  background: ${props => props.theme.header.backgroundColor};
   margin-bottom: 1.45rem;
 `
-
 const Inner = styled.div`
   margin:0px auto;
   max-width: 960px;
