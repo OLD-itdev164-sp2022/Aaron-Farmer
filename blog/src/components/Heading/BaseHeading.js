@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Heading } from 'rebass'
 
 
-const BaseHeading = ({children, ...rest}) =>
+const BaseHeading = ({ children, ...rest}) =>
 <Heading {...rest}>
     { children }
 </Heading>
