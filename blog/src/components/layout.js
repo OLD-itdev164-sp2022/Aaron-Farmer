@@ -14,6 +14,9 @@ import { Gray } from "../themes/Gray"
 import {Header} from "./Header"
 import GlobalStyle from "./GlobalStyle"
 
+import { Main } from './Main'
+import { Footer } from './Footer'
+
 const Content = styled.div` 
   margin: 0 auto;
   max-width: 960px;
@@ -34,24 +37,18 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
     <ThemeProvider theme={Gray}>
       <GlobalStyle/>
         <Header siteTitle={data.site.siteMetadata.title || `Title`} />
         <Content>
-          <main>{children}</main>
-          <footer
-            style={{
-              marginTop: `2rem`,
-            }}
-          >
+          <Main>{children}</Main>
+          <Footer>
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.com">Gatsby</a>
-          </footer>
+          </Footer>
         </Content>
       </ThemeProvider>
-    </>
   )
 }
 
