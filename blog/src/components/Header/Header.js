@@ -2,11 +2,13 @@ import  React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import Search from 'styled-icons/feather'
 import { H1 } from "../Heading"
 import { Section } from '../Section'
+import { IconButton } from '../Button'
 
 const Outer = styled.header`
-  background: ${props => props.theme.header.backgroundColor};
+  background-color: ${props => props.theme.variants.header.primary.backgroundColor};
   margin-bottom: 1.45rem;
 `
 const Inner = styled.div`
@@ -35,7 +37,7 @@ const Header = ({ siteTitle }) => (
           </H1>
         </Section>
         <Section width={1/12}>
-        Search
+          <IconButton icon={<Search />} variant='contrast' />
         </Section>
       </Section>
     </Inner>
